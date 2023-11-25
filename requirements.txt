@@ -1,0 +1,13 @@
+Flask
+Werkzeug
+celery==5.3.1
+celery[redis]
+weasyprint
+flask_security
+flask_login
+flask_cors
+flask_caching
+flask_sqlalchemy
+Api
+sqlachemy
+

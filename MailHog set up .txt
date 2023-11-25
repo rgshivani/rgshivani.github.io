@@ -1,0 +1,17 @@
+MailHog set up :
+Dependencies already installed
+cd "/home/rgshivani/go"
+cd bin
+./MailHog
+
+#Redis
+redis-server
+
+#Celery
+celery -A main.celery worker --loglevel=info
+
+#beat
+celery -A main.celery beat --loglevel=info
+
+
+for fresh run - kil with ps aux

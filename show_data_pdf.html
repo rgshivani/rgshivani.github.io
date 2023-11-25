@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+</head>
+<body>
+    <div>
+    <center><h3> Show Details </h3> </center>
+    <br>
+    <!-- {{data}} -->
+    <div class="row">
+        <div class="card my-3 mx-4 col-4" style="width: 18rem;" border: 1px solid>
+            {% for show in data["show"] %}
+                    <div class="card-body"  background-color="pink" border: 1px solid>
+                        <h4 class="card-title"> Name : {{show['name']}}</h4>
+                        <h6 class="card-text"> Tag : {{show['tag']}} </h6>
+                        <h6 class="card-text"> Rating : {{show["rating"] }} </h6>
+                        <h6 class="card-text"> Price : {{show['price'] }}</h6>
+
+                    </div>
+            {% endfor %}
+        </div>
+    
+        <hr>
+       
+    </div>
+
+     {% if data['theatre'] | length > 0 %}
+        <h3>Theatres screening  {{data['show']['name']}}</h3>
+                <div class="row">
+                    {% for theatre in data["theatre"] %}
+                    <div class="card my-3 mx-4 col-4" style="width: 18rem;" border: 1px solid>
+                        
+                                <div class="card-body"  background-color="pink" border: 1px solid>
+                                    <h4 class="card-title"> Name : {{theatre['name']}}</h4>
+                                    <h6 class="card-text"> Place : {{theatre['place']}} </h6>
+                                    <h6 class="card-text"> Capacity : {{theatre['capacity'] }}</h6>
+                                </div>
+                        
+                    </div>
+                    {% endfor %}
+    {% else %}
+     <h4> No show screening now, Check back later</h4>
+     {% endif %}
+
+                </div>
+
+
+    
+    </div>
+            
+
+</body>
+</html>
